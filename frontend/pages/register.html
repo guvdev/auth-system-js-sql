@@ -13,7 +13,7 @@
 <body>
     <div id="toast" class="fixed top-5 right-5 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg opacity-0 transition-opacity duration-500"></div>
     <div class="sm:min-h-screen h-full w-full flex justify-center items-center bg-[#0D1632]">
-         <form class="bg-[#17171c] flex flex-col gap-4 p-6 rounded-xl shadow-2xl w-full sm:max-w-sm sm:h-[75vh] h-[100vh] justify-center">
+         <form class="bg-[#17171c] flex flex-col gap-4 p-6 rounded-xl shadow-2xl w-full sm:max-w-sm sm:h-[70vh] h-[100vh] justify-center">
             <h1 class="text-[#6274F3] text-2xl font-bold sm:text-lg sm:font-medium flex justify-center items-center p-4">Sistema de Acesso</h1>
             
             <div class="input-group text-white">
@@ -31,10 +31,9 @@
                 <label>Senha</label>
                 <input type="password" id="password" class="my-1 w-full p-2 rounded-2xl bg-transparent border border-[#6274F3] text-white outline-none" required>
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col gap-4">
                 <button type="submit" class="bg-[#6274F3] rounded-2xl text-white font-medium p-2 w-full cursor-pointer mt-1 hover:bg-[#7e8cf4] transition">Cadastrar</button>
-                <p id="regain" class="text-[#565964] flex items-center justify-center cursor-pointer my-4 hover:text-[#6274F3] transition">Recuperar acesso</p>
-                <p id="voltar" class="text-[#565964] flex justify-center items-center cursor-pointer hover:text-[#6274F3] transition">Voltar</p>
+                <p id="back" class="text-[#565964] flex justify-center items-center cursor-pointer hover:text-[#6274F3] transition">Voltar</p>
             </div>
         </form>
     </div>

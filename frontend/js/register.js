@@ -1,17 +1,7 @@
-const regain = document.querySelector("#regain");
-regain.addEventListener("click", () => {
-  toast.textContent = 'Funcionalidade em desenvolvimento';
-  toast.classList.remove('bg-green-500', 'bg-red-500');
-  toast.classList.add('bg-yellow-400');
-  toast.classList.remove('opacity-0');
-  toast.classList.add('opacity-100');
-  setTimeout(() => {
-    toast.classList.remove('opacity-100');
-    toast.classList.add('opacity-0');
-  }, 3000);
-});
-
 const form = document.querySelector("form");
+const back = document.querySelector("#back");
+
+
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -68,7 +58,6 @@ form.addEventListener("submit", async (e) => {
     }
 });
 
-const voltar = document.querySelector("#voltar");
-voltar.addEventListener("click", () => {
+back.addEventListener("click", () => {
     window.location.href = "login.html";
 });

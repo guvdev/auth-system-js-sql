@@ -1,9 +1,11 @@
 const cadastrar = document.querySelector("#cadastrar");
+const form = document.querySelector("form");
+const regain = document.querySelector("#regain");
+
 cadastrar.addEventListener("click", () => {
   window.location.href = "register.html";
 });
 
-const regain = document.querySelector("#regain");
 regain.addEventListener("click", () => {
   toast.textContent = 'Funcionalidade em desenvolvimento';
   toast.classList.remove('bg-green-500', 'bg-red-500');
@@ -15,10 +17,6 @@ regain.addEventListener("click", () => {
     toast.classList.add('opacity-0');
   }, 3000);
 });
-
-
-
-const form = document.querySelector("form");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -32,10 +30,14 @@ form.addEventListener("submit", async (e) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
-
     const data = await response.json();
-    // Configura o toast
     toast.textContent = data.message;
+    toast.classList.remove('opacity-0');
+    toast.classList.add('opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0');
+    }, 3000);
     if (data.success) {
       toast.classList.remove('bg-red-500');
       toast.classList.add('bg-green-500');
@@ -46,17 +48,6 @@ form.addEventListener("submit", async (e) => {
       toast.classList.remove('bg-green-500');
       toast.classList.add('bg-red-500');
     }
-
-    // Mostra o toast
-    toast.classList.remove('opacity-0');
-    toast.classList.add('opacity-100');
-
-    // Esconde depois de 3 segundos
-    setTimeout(() => {
-      toast.classList.remove('opacity-100');
-      toast.classList.add('opacity-0');
-    }, 3000);
-
   } catch (err) {
     toast.textContent = 'Erro de conexão com o servidor';
     toast.classList.remove('opacity-0', 'bg-green-500');
@@ -68,3 +59,7 @@ form.addEventListener("submit", async (e) => {
     }, 3000);
   }
 });
+
+// resumo do codigo acima:
+// 1. Captura o evento de submit do form
+// 2. Previne o comportamento padrão (recarregar a página)
