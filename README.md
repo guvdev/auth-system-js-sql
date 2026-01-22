@@ -28,7 +28,3 @@
     <li>Tailwind CSS</li>
   </ul>
 
-  <h2>Autor</h2>
-  <p>
-    Luiz — Estudante de Sistemas de Informação
-  </p>
