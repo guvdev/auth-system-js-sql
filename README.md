@@ -28,3 +28,10 @@
     <li>Tailwind CSS</li>
   </ul>
 
+  <p>
+  Banco de dados
+  user: root
+  password: 1234
+  database: auth_system
+  </p>
+
